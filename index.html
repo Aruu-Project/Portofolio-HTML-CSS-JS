@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+     <link rel="icon"  href="./assets/logo.png" type="image/x-icon">
+     <!-- Favicon -->
+
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- Font -->
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <title>Aruu | Portofolio</title>
+</head>
+<body>
+
+    <!-- Canvas -->
+     <canvas id="particles-bg"></canvas>
+    
+    <!-- Navbar -->
+     <nav class="mac-nav" id="navbar">
+        <!-- Logo Portofolio (Kembali ke Home) -->
+        <a href="#home" class="nav-logo" data-tooltip="Back to Home">
+            <span>A</span>
+        </a>
+        <div class="nav-divider"></div>
+        <a href="#home" class="nav-item active" data-tooltip="Home">
+            <i class="fa-solid fa-house"></i>
+            <span class="nav-tooltip">Home</span>
+        </a>
+        <a href="#about" class="nav-item" data-tooltip="About">
+            <i class="fa-solid fa-user"></i>
+            <span class="nav-tooltip">About</span>
+        </a>
+        <a href="#education" class="nav-item" data-tooltip="Education">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span class="nav-tooltip">Education</span>
+        </a>
+        <a href="#experience" class="nav-item" data-tooltip="Experience">
+            <i class="fa-solid fa-briefcase"></i>
+            <span class="nav-tooltip">Experience</span>
+        </a>
+        <a href="#certificate" class="nav-item" data-tooltip="Certificate">
+            <i class="fa-solid fa-award"></i>
+            <span class="nav-tooltip">Certificate</span>
+        </a>
+        <a href="#contact" class="nav-item" data-tooltip="Contact">
+            <i class="fa-solid fa-envelope"></i>
+            <span class="nav-tooltip">Contact</span>
+        </a>
+
+        <!-- Pemisah ke Tombol Tema -->
+        <div class="nav-divider"></div>
+
+        <!-- Tombol Switcher Tema -->
+        <button id="theme-toggle" class="nav-item" data-tooltip="Ubah Tema" style="background: rgba(255, 255, 255, 0.05); border: none;">
+            <i class="fa-solid fa-moon"></i>
+            <span class="nav-tooltip">Ubah Tema</span>
+        </button>
+    </nav>
+
+    <!-- Hero -->
+     <section id="home">
+        <div class="hero-text fade-in">
+            <h1>Halo, Saya <br><span>Muhamad Harun</span></h1>
+            <p>Saya adalah seorang Front-End Web Developer yang bersemangat menciptakan pengalaman digital yang menarik dan interaktif.</p>
+            <div class="social-links">
+                <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-whatsapp"></i></a>
+            </div>
+        </div>
+        <div class="hero-img-container fade-in">
+            <div class="place hero-photo" style="overflow: hidden; border: 2px solid var(--primary-color);">
+                <img src="./assets/runn.png" alt="hero" class="foto-profil">
+            </div>
+        </div>
+    </section>
+
+    <!-- About -->
+      <section id="about">
+        <h2 class="section-title fade-in">Tentang Saya</h2>
+        <div class="about-content">
+            <div class="place about-photo fade-in" style="overflow: hidden; border: 2px solid var(--primary-color);">
+                <img src="./assets/me.png" alt="hero" class="foto-profil">
+            </div>
+            
+            <div class="about-text fade-in">
+                <p><span>Halo, Saya <b>M.Harun</b></span>Saya adalah seorang <b>lulusan Teknik Komputer dan Jaringan</b> yang percaya bahwa belajar bisa dilakukan di mana saja.</p>
+                <p>Perjalanan karier saya dimulai dari dunia teknis di sekolah, hingga menjelajahi dinamika Industri Logistik, F&B dan Ritel.</p>
+                <p>Dari gudang logistik, saya belajar tentang <b>ketelitian</b>. Dari industri F&B, saya belajar tentang <b>pelayanan dan kerjasama tim</b>. Saya siap membawa kombinasi keterampilan teknis dan pengalaman operasional ini untuk memberikan kontribusi nyata bagi tim Anda.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+        <h2 class="section-title fade-in">Pendidikan</h2>
+        <div class="edu-container">
+            <div class="edu-card fade-in">
+                <div class="place edu-photo">
+                    <img src="./assets/dm.png" alt="SD" class="foto-profil">
+                </div>
+                <div class="edu-info">
+                    <h3>[SDIT Daarul Muttaqien Surabaya]</h3>
+                    <span class="year">2014 - 2020</span>
+                    <p></p>
+                </div>
+            </div>
+            
+            <div class="edu-card fade-in" style="transition-delay: 0.1s;">
+                <div class="place edu-photo">
+                    <img src="./assets/47.png" alt="SMP" class="foto-profil">
+                </div>
+                <div class="edu-info">
+                    <h3>[SMP Negeri 47 Surabaya]</h3>
+                    <span class="year">2020 - 2023</span>
+                    <p></p>
+                </div>
+            </div>
+
+            <div class="edu-card fade-in" style="transition-delay: 0.2s;">
+                <div class="place edu-photo">
+                    <img src="./assets/dbs.png" alt="SMK" class="foto-profil">
+                </div>
+                <div class="edu-info">
+                    <h3>[SMK Dharma Bahari Surabaya]</h3>
+                    <span class="year">2023 - 2026</span>
+                    <p>Jurusan Teknik Komputer dan Jaringan (TKJ)</p>
+                </div>
+            </div>
+
+            <div class="edu-card fade-in" style="transition-delay: 0.2s;">
+                <div class="photo-placeholder edu-photo"></div>
+                <div class="edu-info">
+                    <h3>[Belum Tersedia]</h3>
+                    <span class="year">-</span>
+                    <p>_</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience -->
+    <section id="experience">
+    <h2 class="section-title fade-in">Pengalaman Kerja</h2>
+    <div class="exp-container">
+        
+        <!-- Kartu Pengalaman 1 -->
+        <div class="exp-card fade-in">
+            <div class="exp-header">
+                <div class="exp-icon">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div class="exp-title">
+                    <h3>Helper Gudang</h3>
+                    <span class="company">PT. Indopsiko Ekspres | Okt 2025 - Mei 2026</span>
+                </div>
+            </div>
+            <div class="exp-body">
+                <p>Mengelola pencatatan data barang masuk dan keluar secara akurat menggunakan sistem input data, serta melakukan pengelompokan produk berdasarkan kategori untuk mempercepat proses searching.</p>
+            </div>
+        </div>
+
+        <!-- Kartu Pengalaman 2 -->
+        <div class="exp-card fade-in" style="transition-delay: 0.1s;">
+            <div class="exp-header">
+                <div class="exp-icon">
+                    <i class="fa-solid fa-briefcase"></i>
+                </div>
+                <div class="exp-title">
+                    <h3>Kitchen Crew</h3>
+                    <span class="company">Graha Golf Famili Resto | Feb 2025 - Sept 2026</span>
+                </div>
+            </div>
+            <div class="exp-body">
+                <p>Mendukung koordinasi antara area dapur dan area saji untuk memastikan pesanan disiapkan dengan standar kualitas yang konsisten dan disajikan tepat waktu.</p>
+            </div>
+        </div>
+
+        <!-- Kartu Pengalaman 3 -->
+        <div class="exp-card fade-in" style="transition-delay: 0.2s;">
+            <div class="exp-header">
+                <div class="exp-icon">
+                    <i class="fa-solid fa-laptop-code"></i>
+                </div>
+                <div class="exp-title">
+                    <h3>Teknisi IT Support (Internship)</h3>
+                    <span class="company">PT. Triperwira Multi Pamenang | Juli 2024 - Okt 2024</span>
+                </div>
+            </div>
+            <div class="exp-body">
+                <p>Membantu pemeliharaan database situs web internal perusahaan serta menangani kebutuhan teknis harian karyawan terkait jaringan, server lokal, serta kendala sistem operasi komputer.</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- Certificate -->
+    <section id="certificate">
+        <h2 class="section-title fade-in">Sertifikat</h2>
+        <div class="cert-container">
+            <div class="photo-placeholder cert-card fade-in">
+                <div class="cert-overlay"><span>[Nama Sertifikat 1]</span></div>
+            </div>
+            <div class="photo-placeholder cert-card fade-in" style="transition-delay: 0.1s;">
+                <div class="cert-overlay"><span>[Nama Sertifikat 2]</span></div>
+            </div>
+            <div class="photo-placeholder cert-card fade-in" style="transition-delay: 0.2s;">
+                <div class="cert-overlay"><span>[Nama Sertifikat 3]</span></div>
+            </div>
+            <div class="photo-placeholder cert-card fade-in" style="transition-delay: 0.3s;">
+                <div class="cert-overlay"><span>[Nama Sertifikat 4]</span></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+        <h2 class="section-title fade-in">Hubungi Saya</h2>
+        <div class="contact-content fade-in">
+            <p>Tertarik untuk bekerja sama atau sekadar menyapa? Jangan ragu untuk menghubungi saya melalui media sosial atau formulir di bawah ini.</p>
+            
+            <div class="social-links">
+                <a href="#" class="social-btn"><i class="fa-brands fa-linkedin-in"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-github"></i></a>
+                <a href="#" class="social-btn"><i class="fa-brands fa-instagram"></i></a>
+            </div>
+
+            <form class="contact-form" onsubmit="event.preventDefault(); showMessage();">
+                <input type="text" placeholder="Nama Anda" required>
+                <input type="email" placeholder="Email Anda" required>
+                <textarea placeholder="Pesan Anda" required></textarea>
+                <button type="submit" class="submit-btn">Kirim Pesan</button>
+            </form>
+        </div>
+    </section>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
