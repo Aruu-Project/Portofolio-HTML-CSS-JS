@@ -13,11 +13,11 @@
 
 :root[data-theme="light"] {
   /* Tema Terang */
-  --bg-color: #d3c1d0;
-  --text-color: #280f2a;
-  --secondary-text: #694767;
-  --primary-color: #ca25eb;
-  --secondary-color: #e73aed;
+  --bg-color: #e2e1e1;
+  --text-color: #050505;
+  --secondary-text: #110eca;
+  --primary-color: #2f3ec5;
+  --secondary-color: #5159be;
   --glass-bg: rgba(255, 255, 255, 0.4);
   --glass-border: rgba(42, 15, 42, 0.12);
   --card-bg: rgba(38, 15, 42, 0.02);
@@ -73,12 +73,12 @@ body {
   background-image:
     radial-gradient(
       circle at 15% 50%,
-      rgba(235, 37, 219, 0.06),
+      rgba(40, 15, 110, 0.527),
       transparent 25%
     ),
     radial-gradient(
       circle at 85% 30%,
-      rgba(237, 58, 228, 0.06),
+      rgba(36, 23, 71, 0.521),
       transparent 25%
     );
 }
@@ -126,11 +126,7 @@ body {
   width: 44px;
   height: 44px;
   border-radius: 12px;
-  background: linear-gradient(
-    135deg,
-    var(--primary-color),
-    var(--secondary-color)
-  );
+  background: linear-gradient(135deg, #0d0914 0%, #170726 25%, #450c5c 50%, #70166d 75%, #a61fa7 100%);
   color: white !important;
   text-decoration: none;
   font-weight: 700;
@@ -172,13 +168,65 @@ body {
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+.nav-tema {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #9cb1db 0%, #d1dcf0 45%, #e8edf5 70%, #ffffff 100%);
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  border: none;
+  font-size: 1.25rem;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.nav-tema:hover {
+    transform: scale(1.15) rotate(-5deg);
+  box-shadow: 0 6px 15px rgba(228, 92, 246, 0.5);
+}
+
 :root[data-theme="light"] .nav-item {
   background: rgba(38, 15, 42, 0.05);
 }
 
+:root[data-theme="light"] .nav-item:hover {
+  transform: scale(1.25) translateY(-6px);
+  background: rgba(93, 59, 246, 0.5);
+  color: white !important;
+  box-shadow: 0 8px 16px rgba(62, 59, 246, 0.4);
+}
+
+:root[data-theme="light"] .nav-tema {
+  background: linear-gradient(135deg, #a61fa7 0%, #70166d 25%, #450c5c 50%, #170726 75%, #0d0914 100%);
+  color: white !important;
+}
+
+:root[data-theme="light"] .nav-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #ffffff 0%, #e8edf5 45%, #d1dcf0 70%, #9cb1db 100%);
+  color: rgb(0, 0, 0) !important;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.3rem;
+  box-shadow: 0 4px 10px rgba(115, 59, 246, 0.3);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+}
+
 .nav-item:hover {
   transform: scale(1.25) translateY(-6px);
-  background: var(--primary-color);
+  background: rgba(215, 59, 246, 0.5);
   color: white !important;
   box-shadow: 0 8px 16px rgba(215, 59, 246, 0.4);
 }
@@ -200,6 +248,11 @@ body {
     transform 0.2s ease;
   transform: translateY(-10px);
   white-space: nowrap;
+}
+
+.nav-tema:hover .nav-tooltip {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 .nav-item:hover .nav-tooltip {
@@ -269,6 +322,109 @@ section {
   border-radius: inherit;
 }
 
+/* ==================== 5. FLOATING TECH LOGOS (HTML5, CSS3, JS) ==================== */
+.hero-img-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+/* Wadah posisi absolut untuk masing-masing badge */
+.float-node {
+  position: absolute;
+  z-index: 10;
+}
+
+/* Menghentikan animasi melayang saat didekati mouse */
+.float-node:hover {
+  animation-play-state: paused;
+}
+
+/* Posisi Koordinat Asimetris di Sekitar Foto (Berdasarkan pusat Container) */
+.node-html {
+  top: calc(60% - 150px);
+  left: calc(100% - 5px);
+  animation: float-anim-1 6s ease-in-out infinite;
+}
+
+.node-js {
+  top: calc(50% - 180px);
+  left: calc(90% + 130px);
+  animation: float-anim-2 7s ease-in-out infinite;
+}
+
+.node-css {
+  top: calc(25% + 90px);
+  left: calc(78% + 140px);
+  animation: float-anim-3 8s ease-in-out infinite;
+}
+
+/* Desain Glassmorphic untuk Badge */
+.tech-badge {
+  width: 56px;
+  height: 56px;
+  border-radius: 16px;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 8px 32px rgba(238, 2, 247, 0.15);
+  transition:
+    transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    box-shadow 0.3s ease;
+}
+
+/* Warna khusus ikon teknologi */
+.badge-html {
+  color: #e34f26;
+} /* HTML5 Orange */
+.badge-css {
+  color: #1572b6;
+} /* CSS3 Blue */
+.badge-js {
+  color: #f7df1e; /* JS Yellow */
+  text-shadow: 0 0 10px rgba(247, 223, 30, 0.2);
+}
+
+/* Kontras khusus JS Badge saat Mode Terang */
+:root[data-theme="light"] .badge-js {
+  color: #d97706;
+}
+
+/* Keyframes untuk efek melayang organik (Naik-Turun + Rotasi tipis) */
+@keyframes float-anim-1 {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(-5deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(5deg);
+  }
+}
+@keyframes float-anim-2 {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-15px) rotate(-5deg);
+  }
+}
+@keyframes float-anim-3 {
+  0%,
+  100% {
+    transform: translateY(0px) rotate(10deg);
+  }
+  50% {
+    transform: translateY(-25px) rotate(-10deg);
+  }
+}
+
 /* ==================== 5. SECTION: HERO / HOME ==================== */
 #home {
   flex-direction: row;
@@ -287,13 +443,24 @@ section {
   margin-bottom: 1rem;
 }
 
+:root[data-theme="light"] .hero-text span {
+  color: rgba(55, 0, 255, 0.685);
+  box-shadow: 30px rgba(55, 0, 255, 0.63);
+}
 .hero-text span {
-  color: var(--primary-color);
+  color: rgba(252, 47, 252, 0.685);
+  box-shadow: 30px rgba(247, 0, 255, 0.63);
+}
+
+:root[data-theme="light"] .hero-text p {
+  font-size: 1.2rem;
+  color: rgb(0, 0, 0);
+  margin-bottom: 2rem;
 }
 
 .hero-text p {
   font-size: 1.2rem;
-  color: var(--secondary-text);
+  color: rgb(255, 255, 255);
   margin-bottom: 2rem;
 }
 
@@ -345,7 +512,7 @@ section {
 }
 
 .hero-photo::before {
-  content: "Isi Foto Profil";
+  content: "Belum Tersedia";
   color: var(--secondary-text);
   font-size: 0.95rem;
   position: absolute;
@@ -411,7 +578,7 @@ section {
 }
 
 .about-photo::before {
-  content: "Isi Foto About";
+  content: "Belum Tersedia";
   color: var(--secondary-text);
   position: absolute;
   z-index: 1;
@@ -441,8 +608,15 @@ section {
   flex: 1;
 }
 
+:root[data-theme="light"] .about-text p {
+  color: black;
+  line-height: 1.8;
+  margin-bottom: 1.2rem;
+  font-size: 1.1rem;
+}
+
 .about-text p {
-  color: var(--secondary-text);
+  color: rgb(255, 255, 255);
   line-height: 1.8;
   margin-bottom: 1.2rem;
   font-size: 1.1rem;
@@ -480,7 +654,7 @@ section {
 /* Frame Foto di Education */
 .edu-photo {
   width: 100%;
-  height: 160px;
+  height: 300px;
   border-radius: 12px;
   border: 2px dashed rgba(255, 255, 255, 0.3);
   background: var(--card-bg);
@@ -490,15 +664,6 @@ section {
   justify-content: center;
   position: relative;
   transition: border-color 0.3s ease;
-}
-
-.edu-photo::before {
-  content: "Logo / Foto Sekolah";
-  color: var(--secondary-text);
-  font-size: 0.9rem;
-  position: absolute;
-  z-index: 1;
-  pointer-events: none;
 }
 
 .edu-photo .foto-profil {
@@ -529,8 +694,13 @@ section {
   display: block;
 }
 
+:root[data-theme="light"] .edu-info p {
+  color: black;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
 .edu-info p {
-  color: var(--secondary-text);
+  color: rgb(255, 255, 255);
   font-size: 0.95rem;
   line-height: 1.6;
 }
@@ -654,8 +824,13 @@ section {
   font-weight: 500;
 }
 
+:root[data-theme="light"] .exp-body p {
+  color: black;
+  line-height: 1.7;
+  font-size: 0.98rem;
+}
 .exp-body p {
-  color: var(--secondary-text);
+  color: rgb(255, 255, 255);
   line-height: 1.7;
   font-size: 0.98rem;
 }
@@ -684,7 +859,7 @@ section {
 }
 
 .cert-card::before {
-  content: "Isi Foto Sertifikat";
+  content: "";
   color: var(--secondary-text);
   font-size: 0.95rem;
   position: absolute;
@@ -694,14 +869,14 @@ section {
 
 .cert-card:hover {
   transform: scale(1.05);
-  border-color: var(--primary-color);
+  border-color: rgb(247, 0, 255);
   box-shadow: 0 10px 25px rgba(230, 59, 246, 0.15);
 }
 
 .cert-overlay {
   position: absolute;
   inset: 0;
-  background: rgba(187, 59, 246, 0.85);
+  background: rgba(246, 59, 237, 0.233);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -723,6 +898,169 @@ section {
   padding: 0 15px;
 }
 
+/* ==================== MODAL SERTIFIKAT ==================== */
+.cert-card {
+  cursor: pointer; /* Memberi tahu pengguna bahwa ini bisa diklik */
+}
+
+.cert-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  z-index: 999999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
+
+.cert-modal.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.cert-modal-content {
+  width: 90%;
+  max-width: 900px;
+  height: 80vh;
+  background: var(--card-bg);
+  border: 2px dashed rgba(255, 255, 255, 0.171);
+  border-radius: 20px;
+  position: relative;
+  /* Memulai animasi dari bawah dan mengecil */
+  transform: scale(0.5) translateY(100px);
+  /* Transisi cubic-bezier untuk efek membal (bouncy) yang premium */
+  transition:
+    transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275),
+    border-color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+}
+
+/* Mengatur agar gambar di dalam modal mengikuti ukuran proporsional */
+.cert-modal-content img {
+  max-width: 95%;      /* Memberi sedikit ruang agar tidak mepet ke pinggir modal */
+  max-height: 95%;     /* Menjaga tinggi agar tidak keluar dari modal */
+  width: auto;         /* Membiarkan lebar menyesuaikan proporsi */
+  height: auto;        /* Membiarkan tinggi menyesuaikan proporsi */
+  object-fit: contain; /* Kunci: Memastikan seluruh gambar terlihat tanpa terpotong */
+  align-items: auto;
+  border-radius: 10px; /* Opsional: memberikan sudut lengkung pada gambar */
+}
+
+.cert-modal.active .cert-modal-content {
+  /* Posisi akhir saat membesar ke tengah */
+  transform: scale(1) translateY(0);
+  border-color: var(--primary-color);
+}
+
+.close-modal {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0d0914 0%, #170726 25%, #450c5c 50%, #70166d 75%, #a61fa7 100%);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(209, 59, 246, 0.4);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+  z-index: 10;
+}
+
+.close-modal:hover {
+  background: linear-gradient(135deg, #0d0914 0%, #170726 25%, #450c5c 50%, #70166d 75%, #a61fa7 100%);
+  transform: scale(1.1) rotate(90deg); /* Berputar saat tombol silang disentuh */
+}
+
+.cert-modal-body {
+  color: var(--text-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-align: center;
+  padding: 20px;
+}
+
+/* Penyesuaian Modal untuk Mode Terang */
+:root[data-theme="light"] .cert-modal {
+  background: rgba(255, 255, 255, 0.123);
+}
+:root[data-theme="light"] .cert-modal-content {
+  border-color: rgba(15, 23, 42, 0.2);
+  background: rgba(255, 255, 255, 0.034);
+}
+:root[data-theme="light"] .cert-modal.active .cert-modal-content {
+  border-color: var(--primary-color);
+}
+:root[data-theme="light"] .cert-card:hover {
+  transform: scale(1.05);
+  border-color: rgb(76, 0, 255);
+  box-shadow: 0 10px 25px rgba(230, 59, 246, 0.15);
+}
+:root[data-theme="light"] .cert-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(100, 59, 246, 0.137);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  backdrop-filter: blur(5px);
+  z-index: 3;
+}
+:root[data-theme="light"] .cert-card:hover .cert-overlay {
+  opacity: 1;
+}
+:root[data-theme="light"] .cert-overlay span {
+  color: rgb(0, 0, 0);
+  font-weight: 600;
+  font-size: 1.2rem;
+  text-align: center;
+  padding: 0 15px;
+}
+:root[data-theme="light"] .close-modal {
+  position: absolute;
+  top: -20px;
+  right: -20px;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #ffffff 0%, #e8edf5 45%, #d1dcf0 70%, #9cb1db 100%);
+  color: white;
+  border: none;
+  font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+  z-index: 10;
+}
+:root[data-theme="light"] .close-modal:hover {
+  background: linear-gradient(135deg, #ffffff 0%, #e8edf5 45%, #d1dcf0 70%, #9cb1db 100%);
+  transform: scale(1.1) rotate(90deg); /* Berputar saat tombol silang disentuh */
+}
 /* ==================== 10. SECTION: CONTACT ==================== */
 .contact-content {
   display: flex;
@@ -733,8 +1071,13 @@ section {
   margin: 0 auto;
 }
 
+:root[data-theme="light"] .contact-content p {
+  color: black;
+  margin-bottom: 2rem;
+  font-size: 1.1rem;
+}
 .contact-content p {
-  color: var(--secondary-text);
+  color: rgb(255, 255, 255);
   margin-bottom: 2rem;
   font-size: 1.1rem;
 }
@@ -745,7 +1088,7 @@ section {
   margin-bottom: 3rem;
 }
 
-.social-btn {
+.social-btn-linkedin {
   width: 50px;
   height: 50px;
   border-radius: 50%;
@@ -760,8 +1103,92 @@ section {
   transition: all 0.3s ease;
 }
 
-.social-btn:hover {
-  background: var(--primary-color);
+.social-btn-linkedin:hover {
+  background: #0077b5;
+  color: white !important;
+  transform: translateY(-5px) rotate(360deg);
+}
+
+.social-btn-github {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-btn-github:hover {
+  background: #24292e;
+  color: white !important;
+  transform: translateY(-5px) rotate(360deg);
+}
+
+.social-btn-tiktok {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-btn-tiktok:hover {
+  background: #000;
+  color: white !important;
+  transform: translateY(-5px) rotate(360deg);
+}
+
+.social-btn-instagram {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-btn-instagram:hover {
+  background: linear-gradient(45deg, #feda75 0%, #fa7e1e 25%, #d62976 50%, #962fbf 75%, #4f5bd5 100%);
+  color: white !important;
+  transform: translateY(-5px) rotate(360deg);
+}
+
+.social-btn-whatsapp {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--text-color);
+  font-size: 1.5rem;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-btn-whatsapp:hover {
+  background: linear-gradient(135deg, #20bc5c 0%, #128c7e 100%);;
   color: white !important;
   transform: translateY(-5px) rotate(360deg);
 }
@@ -822,6 +1249,31 @@ section {
     flex-direction: column-reverse;
     text-align: center;
     padding-top: 50px;
+  }
+
+  /* Penyesuaian Koordinat Badge (Mobile) */
+  .node-html {
+    top: calc(30% - 130px);
+    left: calc(40% - 150px);
+  }
+  .node-js {
+    top: calc(30% - 150px);
+    left: calc(70% + 100px);
+  }
+  .node-css {
+    top: calc(10% + 1px);
+    left: calc(75% + 100px);
+  }
+  .tech-badge {
+    width: 44px;
+    height: 44px;
+    font-size: 1.4rem;
+    border-radius: 12px;
+  }
+  .nav-item:hover,
+  .nav-logo:hover,
+  .tech-badge:hover {
+    transform: none !important;
   }
   .hero-text h1 {
     font-size: 2.5rem;

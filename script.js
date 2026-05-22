@@ -103,6 +103,46 @@ function showMessage() {
   }, 3000);
 }
 
+// MODAL SERTIFIKAT (POP-UP FULLSCREEN)
+const certCards = document.querySelectorAll(".cert-card");
+const certModal = document.getElementById("cert-modal");
+const certModalBody = document.getElementById("cert-modal-body");
+const closeModalBtn = document.querySelector(".close-modal");
+
+certCards.forEach((card) => {
+  card.addEventListener("click", () => {
+    // Ambil teks dari sertifikat yang di-klik
+    const certName = card.querySelector(".cert-overlay span").innerText;
+
+    // Masukkan tampilan ke tengah modal.
+    // Nanti saat Anda sudah punya gambar/file, Anda bisa mengganti kode HTML ini dengan <img src="...">
+    // Contoh di dalam JavaScript Anda
+certModalBody.innerHTML = `
+    <img src="./assets/certificate.jpg" alt="Sertifikat" style="max-width: 95%; max-height: 82vh; border-radius: 10px;">
+`;
+
+    // Munculkan Modal
+    certModal.classList.add("active");
+
+    // Kunci layar agar tidak bisa di-scroll saat melihat sertifikat
+    document.body.style.overflow = "hidden";
+  });
+});
+
+function closeCertModal() {
+  certModal.classList.remove("active");
+  // Kembalikan fungsi scroll pada halaman utama
+  document.body.style.overflow = "";
+}
+
+// Tutup saat tombol silang (X) di-klik
+closeModalBtn.addEventListener("click", closeCertModal);
+
+// Tutup saat area gelap di luar kotak sertifikat di-klik
+certModal.addEventListener("click", (e) => {
+  if (e.target === certModal) closeCertModal();
+});
+
 // 5. ANIMASI PARTIKEL INTERAKTIF PADA BACKGROUND (Menyesuaikan Tema secara Dinamis)
 const canvas = document.getElementById("particles-bg");
 const ctx = canvas.getContext("2d");
